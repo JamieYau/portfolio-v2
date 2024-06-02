@@ -9,6 +9,7 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./ui/toggle-mode";
+import { navigationLinks } from "@/lib/data";
 
 export default function Header() {
   return (
@@ -16,15 +17,16 @@ export default function Header() {
       <div className="flex-1"></div>
       <NavigationMenu className="rounded-3xl bg-muted p-4">
         <NavigationMenuList className="gap-4 text-sm text-muted-foreground">
-          <NavigationMenuItem className="hover:text-foreground">
-            <NavigationMenuLink href="/#about">01. About</NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem className="hover:text-foreground">
-            <NavigationMenuLink href="/#about">02. Projects</NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem className="hover:text-foreground">
-            <NavigationMenuLink href="/#about">03. Contact</NavigationMenuLink>
-          </NavigationMenuItem>
+          {navigationLinks.map((link) => (
+            <NavigationMenuItem
+              key={link.href}
+              className="hover:text-foreground"
+            >
+              <NavigationMenuLink href={link.href}>
+                {link.label}
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
       <div className="flex flex-1 justify-end">

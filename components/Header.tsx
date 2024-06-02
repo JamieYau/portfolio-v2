@@ -1,30 +1,28 @@
+"use client";
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./ui/toggle-mode";
 import { navigationLinks } from "@/lib/data";
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-100 flex w-full items-center justify-center p-8">
+    <header className="z-100 fixed top-0 flex w-full items-center justify-center p-8">
       <div className="flex-1"></div>
       <NavigationMenu className="rounded-3xl bg-muted p-4">
         <NavigationMenuList className="gap-4 text-sm text-muted-foreground">
           {navigationLinks.map((link) => (
-            <NavigationMenuItem
-              key={link.href}
-              className="hover:text-foreground"
-            >
-              <NavigationMenuLink href={link.href}>
-                {link.label}
-              </NavigationMenuLink>
+            <NavigationMenuItem key={link.href} className="hover:text-foreground">
+              <Link href={link.href} legacyBehavior passHref>
+                <NavigationMenuLink>
+                  <span className="mr-1">{link.index}</span>
+                  {link.label}
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>

@@ -1,10 +1,13 @@
 export default function About() {
   return (
-    <section id="about" className="flex min-h-screen min-w-full flex-col pt-24">
+    <section
+      id="about"
+      className="mx-auto flex min-h-screen max-w-full flex-col pt-24"
+    >
       <h2 className="text-[clamp(26px,5vw,2em)] font-semibold">
         <span className="mr-2 text-primary">01.</span>About Me
       </h2>
-      <div className="mx-auto max-w-4xl">
+      <div className="max-w-4xl">
         <p className="mb-4 text-lg">
           Hi, I&apos;m
           <span className="font-semi-bold text-primary"> Jamie</span>, a
@@ -30,9 +33,9 @@ export default function About() {
         </p>
         <h3 className="mt-8 text-xl font-semibold">Education</h3>
         <p className="mb-4">
-          I hold a Bachelors of Science in Computer Science from Royal Holloway University of London, where I
-          gained a strong foundation in software development and computer
-          science principles.
+          I hold a Bachelors of Science in Computer Science from Royal Holloway
+          University of London, where I gained a strong foundation in software
+          development and computer science principles.
         </p>
         <h3 className="mt-8 text-xl font-semibold">Personal Interests</h3>
         <p className="mb-4">

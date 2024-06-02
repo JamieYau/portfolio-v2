@@ -11,15 +11,14 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "../ui/button";
 
-
 export default function Projects() {
   return (
     <section
       id="projects"
       className="mx-auto flex min-h-screen max-w-full flex-col pt-24"
     >
-      <h2 className="mb-8 text-[clamp(26px,5vw,2em)] font-semibold">
-        <span className="mr-2 text-primary">02.</span>Projects
+      <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['02.'] after:h-px after:flex-1 after:bg-muted">
+        <span className="mr-4">Projects</span>
       </h2>
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
         {projects.map((project) => (

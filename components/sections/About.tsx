@@ -4,8 +4,8 @@ export default function About() {
       id="about"
       className="mx-auto flex min-h-screen max-w-full flex-col pt-24"
     >
-      <h2 className="text-[clamp(26px,5vw,2em)] font-semibold">
-        <span className="mr-2 text-primary">01.</span>About Me
+      <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['01.'] after:h-px after:flex-1 after:bg-muted">
+        <span className="mr-4">About Me</span>
       </h2>
       <div className="max-w-4xl">
         <p className="mb-4 text-lg">

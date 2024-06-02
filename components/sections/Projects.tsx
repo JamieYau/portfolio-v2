@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { projects } from "@/lib/data";
-import { tagColors } from "@/lib/data";
 import {
   Card,
   CardContent,
@@ -37,12 +36,9 @@ export default function Projects() {
             </CardHeader>
             <CardContent>
               <div className="mb-4 flex gap-1 text-sm">
-                {project.tags.map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant={"outline"}
-                  >
-                    {tag}
+                {project.tags.map((tag, index) => (
+                  <Badge key={index} variant={tag.variant}>
+                    {tag.name}
                   </Badge>
                 ))}
               </div>

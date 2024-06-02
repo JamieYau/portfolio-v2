@@ -13,7 +13,7 @@ import { navigationLinks } from "@/lib/data";
 
 export default function Header() {
   return (
-    <header className="flex w-full items-center justify-center p-8">
+    <header className="fixed top-0 z-100 flex w-full items-center justify-center p-8">
       <div className="flex-1"></div>
       <NavigationMenu className="rounded-3xl bg-muted p-4">
         <NavigationMenuList className="gap-4 text-sm text-muted-foreground">

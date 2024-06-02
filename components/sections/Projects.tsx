@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "../ui/button";
 
 
 export default function Projects() {
@@ -45,24 +46,24 @@ export default function Projects() {
             </CardContent>
             <CardFooter>
               <div className="flex space-x-4">
-                {project.links.live && (
-                  <a
-                    href={project.links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    Live Demo
-                  </a>
-                )}
                 {project.links.repo && (
                   <a
                     href={project.links.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline"
+                    className={buttonVariants({ variant: "outline" })}
                   >
                     Repository
+                  </a>
+                )}
+                {project.links.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonVariants({ variant: "default" })}
+                  >
+                    Live Demo
                   </a>
                 )}
               </div>

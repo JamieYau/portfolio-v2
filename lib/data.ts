@@ -19,7 +19,13 @@ export interface Project {
   };
 }
 
-export const navigationLinks = [
+interface NavLink {
+  index: string;
+  href: string;
+  label: string;
+}
+
+export const navigationLinks: NavLink[] = [
   { index: "01.", href: "#about", label: "About" },
   { index: "02.", href: "#projects", label: "Projects" },
   { index: "03.", href: "#contact", label: "Contact" },

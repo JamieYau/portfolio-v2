@@ -1,8 +1,12 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useFormState } from "react-dom";
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { formSchema } from "@/app/api/formSchema";
+import { onSubmitAction } from "@/app/api/formSubmit";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,34 +20,70 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
-
-const formSchema = z.object({
-  email: z
-    .string()
-    .min(1, { message: "This field has to be filled." })
-    .email("This is not a valid email."),
-  message: z.string().min(1, { message: "This field has to be filled." }),
-});
+import { useToast } from "./ui/use-toast";
 
 export default function ContactForm() {
-  // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
+  const [state, formAction] = useFormState(onSubmitAction, {
+    message: "",
+  });
+  const { toast } = useToast();
+
+  const form = useForm<z.output<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      message:"",
+      message: "",
+      ...(state?.fields ?? {}),
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state?.message !== "") {
+      if (state.message === "Message Sent") {
+        // Handle successful form submission
+        toast({
+          variant: "success",
+          title: "Success",
+          description: state.message,
+        });
+        // Reset the form on successful submission
+      } else {
+        // Handle server-side error message
+        toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: state.message,
+        });
+      }
+    }
+  }, [state, toast, form]);
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      {state?.issues && (
+        <div className="text-red-500">
+          <ul>
+            {state.issues.map((issue) => (
+              <li key={issue} className="flex gap-1">
+                {issue}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <form
+        ref={formRef}
+        action={formAction}
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          form.handleSubmit(() => {
+            formAction(new FormData(formRef.current!));
+          })(evt);
+        }}
+        className="space-y-8"
+      >
         <FormField
           control={form.control}
           name="email"

@@ -49,6 +49,7 @@ export default function ContactForm() {
           description: state.message,
         });
         // Reset the form on successful submission
+        form.reset();
       } else {
         // Handle server-side error message
         toast({

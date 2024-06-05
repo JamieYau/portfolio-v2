@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { projects } from "@/lib/data";
 import {
@@ -10,6 +12,13 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "../ui/button";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
+
+  const external = {
+    initial: { x: 0, y: 0 },
+    animate: { x: 5, y: -5 },
+  };
 
 export default function Projects() {
   return (
@@ -46,24 +55,36 @@ export default function Projects() {
             <CardFooter>
               <div className="flex space-x-4">
                 {project.links.repo && (
-                  <a
+                  <motion.a
                     href={project.links.repo}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={buttonVariants({ variant: "outline" })}
+                    initial="initial"
+                    animate="initial"
+                    whileHover="animate"
                   >
                     Repository
-                  </a>
+                    <motion.span variants={external}>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </motion.span>
+                  </motion.a>
                 )}
                 {project.links.live && (
-                  <a
+                  <motion.a
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={buttonVariants({ variant: "default" })}
+                    initial="initial"
+                    animate="initial"
+                    whileHover="animate"
                   >
                     Live Demo
-                  </a>
+                    <motion.span variants={external}>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </motion.span>
+                  </motion.a>
                 )}
               </div>
             </CardFooter>

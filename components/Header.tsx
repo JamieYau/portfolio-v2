@@ -11,10 +11,10 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="z-100 fixed top-0 flex w-full items-center justify-center p-4 sm:p-8">
-      <div className="flex-1"></div>
-      <NavigationMenu className="rounded-3xl bg-muted/90 p-4 shadow-lg">
-        <NavigationMenuList className="gap-4 text-sm text-muted-foreground">
+    <header className="z-100 fixed top-0 flex w-full items-center justify-between p-4 gap-2 sm:p-8">
+      <div className=""></div>
+      <NavigationMenu className="grow rounded-3xl bg-muted/90 p-2 shadow-lg sm:p-4">
+        <NavigationMenuList className="flex flex-wrap gap-4 text-sm text-muted-foreground">
           {navigationLinks.map((link) => (
             <NavigationMenuItem
               key={link.href}
@@ -30,7 +30,7 @@ export default function Header() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex flex-1 justify-end">
+      <div className="flex justify-end">
         <ModeToggle />
       </div>
     </header>

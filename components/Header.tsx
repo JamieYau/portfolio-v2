@@ -11,14 +11,14 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="z-100 fixed top-0 flex w-full items-center justify-between p-4 gap-2 sm:p-8">
+    <header className="z-100 fixed top-0 flex w-full items-center justify-between p-0 sm:gap-2 sm:p-8">
       <div className=""></div>
-      <NavigationMenu className="grow rounded-3xl bg-muted/90 p-2 shadow-lg sm:p-4">
-        <NavigationMenuList className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+      <NavigationMenu className="flex max-w-full grow bg-muted/[98%] p-4 shadow-lg sm:max-w-fit sm:rounded-3xl">
+        <NavigationMenuList className="flex flex-wrap gap-4 text-sm text-muted-foreground sm:w-fit font-medium">
           {navigationLinks.map((link) => (
             <NavigationMenuItem
               key={link.href}
-              className="hover:text-foreground"
+              className="text-center last-of-type:basis-full hover:text-foreground sm:[&:last-of-type]:basis-0"
             >
               <Link href={link.href} legacyBehavior passHref>
                 <NavigationMenuLink>
@@ -30,7 +30,7 @@ export default function Header() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex justify-end">
+      <div className="hidden justify-end sm:flex">
         <ModeToggle />
       </div>
     </header>

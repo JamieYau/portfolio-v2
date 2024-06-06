@@ -15,10 +15,10 @@ import { buttonVariants } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-  const external = {
-    initial: { x: 0, y: 0 },
-    animate: { x: 5, y: -5 },
-  };
+const external = {
+  initial: { x: 0, y: 0 },
+  animate: { x: 5, y: -5 },
+};
 
 export default function Projects() {
   return (

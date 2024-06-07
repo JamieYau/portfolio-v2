@@ -1,50 +1,45 @@
 export default function ViteIcon() {
   return (
-    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" className="w-6 h-6">
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></g>
-      <g id="SVGRepo_iconCarrier">
-        <title>file_type_vite</title>
-        <path
-          d="M29.8836 6.146L16.7418 29.6457c-.2714.4851-.9684.488-1.2439.0052L2.0956 6.1482c-.3-.5262.1498-1.1635.746-1.057l13.156 2.3516a.7144.7144 0 00.2537-.0004l12.8808-2.3478c.5942-.1083 1.0463.5241.7515 1.0513z"
-          fill="url(#paint0_linear)"
-        ></path>
-        <path
-          d="M22.2644 2.0069l-9.7253 1.9056a.3571.3571 0 00-.2879.3294l-.5982 10.1038c-.014.238.2045.4227.4367.3691l2.7077-.6248c.2534-.0585.4823.1647.4302.4194l-.8044 3.9393c-.0542.265.1947.4918.4536.4132l1.6724-.5082c.2593-.0787.5084.1487.4536.414l-1.2784 6.1877c-.08.387.4348.598.6495.2662L16.5173 25 24.442 9.1848c.1327-.2648-.096-.5667-.387-.5106l-2.787.5379c-.262.0505-.4848-.1934-.4109-.4497l1.8191-6.306c.074-.2568-.1496-.5009-.4118-.4495z"
-          fill="url(#paint1_linear)"
-        ></path>
-        <defs id="defs50">
-          <linearGradient
-            id="paint0_linear"
-            x1="6.0002"
-            y1="32.9999"
-            x2="235"
-            y2="344"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"
-          >
-            <stop stop-color="#41D1FF" id="stop38"></stop>
-            <stop offset="1" stop-color="#BD34FE" id="stop40"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear"
-            x1="194.651"
-            y1="8.8182"
-            x2="236.076"
-            y2="292.989"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"
-          >
-            <stop stop-color="#FFEA83" id="stop43"></stop>
-            <stop offset=".0833" stop-color="#FFDD35" id="stop45"></stop>
-            <stop offset="1" stop-color="#FFA800" id="stop47"></stop>
-          </linearGradient>
-        </defs>
-      </g>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 128 128"
+      className="w-6 h-6"
+    >
+      <defs>
+        <linearGradient
+          id="deviconVitejs0"
+          x1={6}
+          x2={235}
+          y1={33}
+          y2={344}
+          gradientTransform="translate(0 .937)scale(.3122)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset={0} stopColor="#41d1ff"></stop>
+          <stop offset={1} stopColor="#bd34fe"></stop>
+        </linearGradient>
+        <linearGradient
+          id="deviconVitejs1"
+          x1={194.651}
+          x2={236.076}
+          y1={8.818}
+          y2={292.989}
+          gradientTransform="translate(0 .937)scale(.3122)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset={0} stopColor="#ffea83"></stop>
+          <stop offset={0.083} stopColor="#ffdd35"></stop>
+          <stop offset={1} stopColor="#ffa800"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        fill="url(#deviconVitejs0)"
+        d="M124.766 19.52L67.324 122.238c-1.187 2.121-4.234 2.133-5.437.024L3.305 19.532c-1.313-2.302.652-5.087 3.261-4.622L64.07 25.187a3.1 3.1 0 0 0 1.11 0l56.3-10.261c2.598-.473 4.575 2.289 3.286 4.594m0 0"
+      ></path>
+      <path
+        fill="url(#deviconVitejs1)"
+        d="M91.46 1.43L48.954 9.758a1.56 1.56 0 0 0-1.258 1.437l-2.617 44.168a1.563 1.563 0 0 0 1.91 1.614l11.836-2.735a1.562 1.562 0 0 1 1.88 1.836l-3.517 17.219a1.562 1.562 0 0 0 1.985 1.805l7.308-2.223c1.133-.344 2.223.652 1.985 1.812l-5.59 27.047c-.348 1.692 1.902 2.614 2.84 1.164l.625-.968l34.64-69.13c.582-1.16-.421-2.48-1.69-2.234l-12.185 2.352a1.558 1.558 0 0 1-1.793-1.965l7.95-27.562A1.56 1.56 0 0 0 91.46 1.43m0 0"
+      ></path>
     </svg>
   );
 }

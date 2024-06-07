@@ -1,14 +1,10 @@
 import { BadgeVariant } from "@/components/ui/badge";
 import {
-  FaHtml5,
-  FaCss3Alt,
   FaReact,
   FaNodeJs,
   FaDatabase,
 } from "react-icons/fa";
 import {
-  SiJavascript,
-  SiTypescript,
   SiNextdotjs,
   SiWebpack,
   SiJest,
@@ -26,6 +22,10 @@ import PythonIcon from "@/components/icons/PythonIcon";
 import JavaIcon from "@/components/icons/JavaIcon";
 import ViteIcon from "@/components/icons/ViteIcon"
 import VitestIcon from "@/components/icons/VitestIcon";
+import JavascriptIcon from "@/components/icons/JavascriptIcon";
+import CSSIcon from "@/components/icons/CSSIcon";
+import TypescriptIcon from "@/components/icons/TypescriptIcon";
+import HTMLIcon from "@/components/icons/HTMLIcon";
 
 interface Tag {
   name: string;
@@ -61,10 +61,10 @@ export const skills = [
   {
     category: "Frontend",
     items: [
-      { icon: FaHtml5, label: "HTML5", color: "#E34F26" },
-      { icon: FaCss3Alt, label: "CSS3", color: "#1572B6" },
-      { icon: SiJavascript, label: "JavaScript", color: "#F7DF1E" },
-      { icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
+      { icon: HTMLIcon, label: "HTML5", color: "#E34F26" },
+      { icon: CSSIcon, label: "CSS3", color: "#1572B6" },
+      { icon: JavascriptIcon, label: "JavaScript", color: "#F7DF1E" },
+      { icon: TypescriptIcon, label: "TypeScript", color: "#3178C6" },
       { icon: FaReact, label: "React", color: "#61DAFB" },
       { icon: SiJquery, label: "jQuery", color: "#0769AD" },
       { icon: SiPostcss, label: "PostCSS", color: "#DD3A0A" },

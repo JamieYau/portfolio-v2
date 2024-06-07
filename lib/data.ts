@@ -67,7 +67,7 @@ export const skills = [
       { icon: FaReact, label: "React", color: "#61DAFB" },
       { icon: SiJquery, label: "jQuery", color: "#0769AD" },
       { icon: SiPostcss, label: "PostCSS", color: "#DD3A0A" },
-      { icon: SiTailwindcss, label: "Tailwind CSS", color: "#06B6D4" },
+      { icon: SiTailwindcss, label: "Tailwind", color: "#06B6D4" },
       { icon: ChakraIcon, label: "Chakra UI", color: "currentColor" },
       { icon: SiShadcnui, label: "Shadcn UI", color: "currentColor" },
     ],

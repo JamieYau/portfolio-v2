@@ -1,4 +1,11 @@
 import { skills } from "@/lib/data";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 
 export default function Skills() {
   return (
@@ -11,22 +18,22 @@ export default function Skills() {
       </h2>
       <div className="max-w-4xl">
         {skills.map((skillCategory) => (
-          <div className="mb-8" key={skillCategory.category}>
-            <h3 className="mb-4 text-xl font-semibold">
-              {skillCategory.category}
-            </h3>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <Card className="mb-8" key={skillCategory.category}>
+            <CardHeader>
+              <CardTitle>{skillCategory.category}</CardTitle>
+            </CardHeader>
+            <CardContent className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {skillCategory.items.map((skill) => (
                 <div className="flex items-center space-x-2" key={skill.label}>
                   <skill.icon
-                    className="h-6 w-6"
+                    className="h-6 w-6 lg:h-10 lg:w-10"
                     style={{ fill: skill.color }}
                   />
-                  <span>{skill.label}</span>
+                  <span className="">{skill.label}</span>
                 </div>
               ))}
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </section>

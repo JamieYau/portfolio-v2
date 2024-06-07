@@ -1,9 +1,5 @@
 import { BadgeVariant } from "@/components/ui/badge";
-import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase, FaGitAlt } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiWebpack,
@@ -16,11 +12,14 @@ import {
   SiExpress,
   SiPostgresql,
   SiJquery,
+  SiVercel,
+  SiRailway,
+  SiSubversion,
 } from "react-icons/si";
 import ChakraIcon from "@/components/icons/ChakraIcon";
 import PythonIcon from "@/components/icons/PythonIcon";
 import JavaIcon from "@/components/icons/JavaIcon";
-import ViteIcon from "@/components/icons/ViteIcon"
+import ViteIcon from "@/components/icons/ViteIcon";
 import VitestIcon from "@/components/icons/VitestIcon";
 import JavascriptIcon from "@/components/icons/JavascriptIcon";
 import CSSIcon from "@/components/icons/CSSIcon";
@@ -94,6 +93,10 @@ export const skills = [
       { icon: SiJest, label: "Jest", color: "#C21325" },
       { icon: VitestIcon, label: "Vitest", color: "#6E9F18" },
       { icon: SiEslint, label: "ESLint", color: "#4B32C3" },
+      { icon: SiVercel, label: "Vercel", color: "currentColor" },
+      { icon: SiRailway, label: "Railway", color: "currentColor" },
+      { icon: FaGitAlt, label: "Git", color: "#F05032" },
+      { icon: SiSubversion, label: "SVN", color: "#809CC9" },
     ],
   },
 ];

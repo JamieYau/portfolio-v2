@@ -2,12 +2,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="mx-auto flex min-h-screen max-w-full flex-col pt-24"
+      className="mx-auto flex min-h-screen w-full flex-col pt-24"
     >
       <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['01.'] after:h-px after:flex-1 after:bg-muted">
         <span className="mr-4">About Me</span>
       </h2>
-      <div className="max-w-4xl">
+      <div>
         <p className="mb-4 text-lg">
           Hi, I&apos;m
           <span className="font-semi-bold text-primary"> Jamie</span>, a

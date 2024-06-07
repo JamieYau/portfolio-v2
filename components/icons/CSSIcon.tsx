@@ -1,10 +1,8 @@
-export default function CSSIcon() {
+import { SVGProps } from "react";
+
+export default function CSSIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 128 128"
-      className="w-6 h-6"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" {...props}>
       <path
         fill="#1572b6"
         d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754l-45.243 12.543z"

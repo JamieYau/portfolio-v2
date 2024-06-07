@@ -1,10 +1,8 @@
-export default function PythonIcon() {
+import { SVGProps } from "react";
+
+export default function PythonIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 128 128"
-      className="w-6 h-6"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" {...props}>
       <linearGradient
         id="deviconPython0"
         x1={70.252}

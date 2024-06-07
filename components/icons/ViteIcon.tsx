@@ -1,10 +1,8 @@
-export default function ViteIcon() {
+import { SVGProps } from "react";
+
+export default function ViteIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 128 128"
-      className="w-6 h-6"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" {...props}>
       <defs>
         <linearGradient
           id="deviconVitejs0"

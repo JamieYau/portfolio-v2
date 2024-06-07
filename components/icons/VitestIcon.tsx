@@ -1,10 +1,8 @@
-export default function VitestIcon() {
+import { SVGProps } from "react";
+
+export default function VitestIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 128 128"
-      className="w-6 h-6"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" {...props}>
       <path
         fill="#fcc72b"
         d="m96.058 40.82l-30.6 44.244a2.635 2.635 0 0 1-4.339-.007a2.6 2.6 0 0 1-.451-1.601l1.225-24.428l-19.772-4.192a2.63 2.63 0 0 1-1.891-1.59a2.6 2.6 0 0 1 .278-2.451l30.6-44.244a2.63 2.63 0 0 1 3.009-.998a2.62 2.62 0 0 1 1.33 1.005c.322.47.48 1.032.451 1.601l-1.224 24.428l19.77 4.192c.423.09.817.282 1.147.56a2.605 2.605 0 0 1 .467 3.48Z"

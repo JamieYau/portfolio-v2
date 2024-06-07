@@ -1,10 +1,8 @@
-export default function JavascriptIcon() {
+import { SVGProps } from "react";
+
+export default function JavascriptIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 128 128"
-      className="w-6 h-6"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" {...props}>
       <path fill="#f0db4f" d="M1.408 1.408h125.184v125.185H1.408z"></path>
       <path
         fill="#323330"

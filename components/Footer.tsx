@@ -8,7 +8,7 @@ interface SocialProps {
 
 function SocialItem({ social }: SocialProps) {
   return (
-    <a key={social.label} href={social.href} className="text-primary">
+    <a key={social.label} href={social.href} className="text-muted-foreground hover:text-foreground">
       {social.icon ? (
         <>
           <social.icon className="h-6 w-6" />
@@ -27,10 +27,10 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col items-center justify-between px-4 md:flex-row md:px-6">
         <div className="flex items-center space-x-4">
           {socials.map((social) => (
-            <SocialItem social={social} key={social.label}/>
+            <SocialItem social={social} key={social.label} />
           ))}
         </div>
-        <p className="mt-4 text-sm md:mt-0">
+        <p className="text-muted-foreground mt-4 text-sm md:mt-0">
           &copy; 2024 Acme Inc. All rights reserved.
         </p>
       </div>

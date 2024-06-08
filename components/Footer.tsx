@@ -31,7 +31,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="text-muted-foreground mt-4 text-sm md:mt-0">
-          &copy; 2024 Acme Inc. All rights reserved.
+          Copyright &copy; 2024 Jamie Yau
         </p>
       </div>
     </footer>

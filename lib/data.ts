@@ -15,7 +15,10 @@ import {
   SiVercel,
   SiRailway,
   SiSubversion,
+  SiGithub,
+  SiLinkedin,
 } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
 import ChakraIcon from "@/components/icons/ChakraIcon";
 import PythonIcon from "@/components/icons/PythonIcon";
 import JavaIcon from "@/components/icons/JavaIcon";
@@ -25,6 +28,7 @@ import JavascriptIcon from "@/components/icons/JavascriptIcon";
 import CSSIcon from "@/components/icons/CSSIcon";
 import TypescriptIcon from "@/components/icons/TypescriptIcon";
 import HTMLIcon from "@/components/icons/HTMLIcon";
+import { IconType } from "react-icons/lib";
 
 interface Tag {
   name: string;
@@ -116,5 +120,33 @@ export const projects: Project[] = [
       live: "https://blog-client-kappa-seven.vercel.app/",
       repo: "https://github.com/JamieYau/blog-client",
     },
+  },
+];
+
+export interface Social {
+  icon?: IconType;
+  label: string;
+  href: string;
+}
+
+export const socials: Social[] = [
+  {
+    icon: SiGithub,
+    label: "Github",
+    href: "https://github.com/JamieYau",
+  },
+  {
+    icon: SiLinkedin,
+    label: "LinkedIn",
+    href: "www.linkedin.com/in/jamie-yau-1906a2290",
+  },
+  {
+    icon: MdEmail,
+    label: "Email",
+    href: "mailto:jamiekcyau@gmail.com",
+  },
+  {
+    label: "Resume",
+    href: "",
   },
 ];

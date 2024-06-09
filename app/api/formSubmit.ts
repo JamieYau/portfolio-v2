@@ -6,6 +6,7 @@ import { Resend } from "resend";
 import { validateString } from "@/lib/utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const resendEmail = process.env.RESEND_EMAIL;
 
 export type FormState = {
   message: string;
@@ -48,7 +49,7 @@ export async function onSubmitAction(
 
   try {
     await resend.emails.send({
-      from: "Resume Contact Form <onboarding@resend.dev>",
+      from: `Resume Contact Form <${resendEmail}>`,
       to: ["jamie.yau2002@me.com"], // Change to your desired recipient
       subject: "New Contact Form Submission",
       react: EmailTemplate({

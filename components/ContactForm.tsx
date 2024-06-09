@@ -15,18 +15,12 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "./ui/use-toast";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 interface ContactFormProps {
   className?: string;
@@ -79,7 +73,7 @@ export default function ContactForm({ className }: ContactFormProps) {
       <CardContent>
         <Form {...form}>
           <FormDescription className="pb-2">
-            Use this form to contact me 
+            Use this form to contact me
           </FormDescription>
           <form
             ref={formRef}

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -72,11 +73,14 @@ export default function ContactForm({ className }: ContactFormProps) {
 
   return (
     <Card className={`${className}`}>
-      <CardHeader className="pb-0">
+      <CardHeader className="pb-2">
         <CardTitle>Contact Form</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>
+          <FormDescription className="pb-2">
+            Use this form to contact me 
+          </FormDescription>
           <form
             ref={formRef}
             action={formAction}
@@ -86,16 +90,15 @@ export default function ContactForm({ className }: ContactFormProps) {
                 formAction(new FormData(formRef.current!));
               })(evt);
             }}
-            className="space-y-8"
+            className="space-y-4"
           >
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="placeholder.mail.com" {...field} />
+                    <Input placeholder="Your email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -106,11 +109,10 @@ export default function ContactForm({ className }: ContactFormProps) {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="example message"
-                      className="resize-none"
+                      placeholder="Your message"
+                      className="min-h-40"
                       {...field}
                     />
                   </FormControl>

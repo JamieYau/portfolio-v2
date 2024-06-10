@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${inter.className} flex min-h-screen flex-col items-center`}
+        className={`${inter.className} w-full relative`}
       >
         <ThemeProvider
           attribute="class"

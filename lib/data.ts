@@ -53,11 +53,23 @@ interface NavLink {
   label: string;
 }
 
-export const navigationLinks: NavLink[] = [
-  { index: "01.", href: "#about", label: "About" },
-  { index: "02.", href: "#skills", label: "Skills" },
-  { index: "03.", href: "#projects", label: "Projects" },
-  { index: "04.", href: "#contact", label: "Contact" },
+export const navItems = [
+  {
+    name: "About",
+    link: "#about",
+  },
+  {
+    name: "Skills",
+    link: "#skills",
+  },
+  {
+    name: "Projects",
+    link: "#projects",
+  },
+  {
+    name: "Contact",
+    link: "#contact",
+  },
 ];
 
 export const skills = [

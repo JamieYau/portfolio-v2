@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <>
       <FloatingNav navItems={navItems} />
-      <div className="hidden fixed top-12 right-10 sm:block">
+      <div className="hidden fixed top-12 right-10 sm:block z-50">
         <ModeToggle />
       </div>
     </>

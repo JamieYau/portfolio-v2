@@ -31,13 +31,13 @@ export default function Skills() {
 
           return (
             <div
-              className="mb-8 flex flex-col items-center"
+              className="mb-8 flex flex-col"
               key={skillCategory.category}
             >
               <div className="mb-8 w-full text-start">
                 <h3 className="text-2xl font-bold">{skillCategory.category}</h3>
               </div>
-              <div className="w-[80%] sm:w-[90%] md:w-full">
+              <div className="w-[80%] sm:w-[90%] md:w-full flex justify-center">
                 <Carousel
                   plugins={[plugin]} // Use the unique plugin instance here
                   opts={{

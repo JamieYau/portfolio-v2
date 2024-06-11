@@ -1,10 +1,33 @@
+"use client";
+import { TypewriterEffect } from "../ui/typewriter-effect";
+
 export default function Hero() {
+  const intro = [
+    { text: "Hi," },
+    { text: "my" },
+    { text: "name" },
+    { text: "is" },
+  ];
+  const name = [{ text: "Jamie" }, { text: "Yau" }];
+
+  const introTypingDuration = intro.reduce(
+    (total, word) => total + word.text.length * 0.1,
+    0.3,
+  );
+
   return (
     <section className="mx-0 my-auto flex h-screen min-w-full flex-col items-start justify-center">
-      <h1 className="font-medium text-primary">Hi, my name is</h1>
-      <h2 className="text-[clamp(40px,8vw,5em)] font-semibold leading-tight text-foreground">
-        Jamie Yau
-      </h2>
+      <TypewriterEffect
+        words={intro}
+        className="font-medium text-primary"
+        cursorClassName="bg-primary"
+        hideCursorAfterTyping={true}
+      />
+      <TypewriterEffect
+        words={name}
+        className="text-[clamp(40px,8vw,5em)] leading-tight"
+        delay={introTypingDuration * 1000 + 500} // Adjust delay to match the timing of the first line
+      />
       <h3 className="text-[clamp(40px,8vw,5em)] font-semibold leading-tight text-muted-foreground">
         Full Stack Developer
       </h3>

@@ -37,37 +37,41 @@ export default function Skills() {
               <div className="mb-8 w-full text-start">
                 <h3 className="text-2xl font-bold">{skillCategory.category}</h3>
               </div>
-              <Carousel
-                plugins={[plugin]} // Use the unique plugin instance here
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full max-w-4xl"
-              >
-                <CarouselContent>
-                  {skillCategory.items.map((skill) => (
-                    <CarouselItem
-                      key={skill.label}
-                      className="sm:basis-1/4 md:basis-1/5"
-                    >
-                      <div>
-                        <Card>
-                          <CardContent className="flex aspect-square flex-col items-center justify-center px-5 py-6 gap-2">
-                            <skill.icon
-                              className="h-6 w-6 lg:h-10 lg:w-10"
-                              style={{ fill: skill.color }}
-                            />
-                            <span className="font-medium leading-5 text-center">{skill.label}</span>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
+              <div className="w-[80%] sm:w-[90%] md:w-full">
+                <Carousel
+                  plugins={[plugin]} // Use the unique plugin instance here
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full max-w-4xl"
+                >
+                  <CarouselContent>
+                    {skillCategory.items.map((skill) => (
+                      <CarouselItem
+                        key={skill.label}
+                        className="basis-1/3 md:basis-1/5"
+                      >
+                        <div>
+                          <Card>
+                            <CardContent className="flex aspect-square flex-col items-center justify-center gap-2 px-5 py-6">
+                              <skill.icon
+                                className="h-6 w-6 sm:h-10 sm:w-10"
+                                style={{ fill: skill.color }}
+                              />
+                              <span className="hidden text-center leading-5 sm:block sm:text-sm md:font-medium lg:text-base">
+                                {skill.label}
+                              </span>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
             </div>
           );
         })}

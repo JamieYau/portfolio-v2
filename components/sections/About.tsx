@@ -1,4 +1,37 @@
+"use client";
+
+import { Tabs } from "../ui/tabs";
+
 export default function About() {
+  const tabs = [
+    {
+      title: "About Me",
+      value: "aboutMe",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-green-600 to-teal-600 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>About Me tab</p>
+        </div>
+      ),
+    },
+    {
+      title: "Education",
+      value: "education",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-green-600 to-teal-600 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>Education tab</p>
+        </div>
+      ),
+    },
+    {
+      title: "Hobbies",
+      value: "hobbies",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-green-600 to-teal-600 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>Hobbies tab</p>
+        </div>
+      ),
+    },
+  ];
   return (
     <section
       id="about"
@@ -7,6 +40,14 @@ export default function About() {
       <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['01.'] after:h-px after:flex-1 after:bg-muted">
         <span className="mr-4">About Me</span>
       </h2>
+      <div className="h-[40rem] relative mx-auto flex w-full my-16 max-w-5xl items-start justify-start [perspective:1000px] gap-8">
+        <Tabs
+          tabs={tabs}
+          containerClassName="flex-col justify-center items-start w-max"
+          tabClassName="border border-transparent"
+          activeTabClassName=""
+        />
+      </div>
       <div>
         <p className="mb-4 text-lg">
           Hi, I&apos;m

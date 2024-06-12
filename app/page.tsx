@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen w-full">
       <Hero />
-      <div className="m-auto flex max-w-4xl flex-col items-center px-8 md:px-24 2xl:max-w-7xl">
+      <div className="m-auto flex max-w-4xl flex-col items-center 2xl:max-w-7xl">
         <About />
         <Skills />
         <Projects />

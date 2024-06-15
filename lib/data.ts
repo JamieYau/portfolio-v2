@@ -29,6 +29,7 @@ import CSSIcon from "@/components/icons/CSSIcon";
 import TypescriptIcon from "@/components/icons/TypescriptIcon";
 import HTMLIcon from "@/components/icons/HTMLIcon";
 import { IconType } from "react-icons/lib";
+import PostmanIcon from "@/components/icons/PostmanIcon";
 
 interface Tag {
   name: string;
@@ -98,6 +99,7 @@ export const skills = [
       { icon: SiPostgresql, label: "PostgreSQL", color: "#336791" },
       { icon: PythonIcon, label: "Python", color: "currentColor" },
       { icon: JavaIcon, label: "Java", color: "currentColor" },
+      { icon: PostmanIcon, label: "Postman", color: "currentColor"}
     ],
   },
   {
@@ -150,7 +152,7 @@ export const socials: Social[] = [
   {
     icon: SiLinkedin,
     label: "LinkedIn",
-    href: "www.linkedin.com/in/jamie-yau-1906a2290",
+    href: "www.linkedin.com/in/jamieyau-dev",
   },
   {
     icon: MdEmail,

@@ -22,6 +22,9 @@ const config = {
       },
     },
     extend: {
+      width: {
+        custom: "clamp(16rem, 90vw, 70rem)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

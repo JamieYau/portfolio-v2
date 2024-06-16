@@ -48,12 +48,6 @@ export interface Project {
   };
 }
 
-interface NavLink {
-  index: string;
-  href: string;
-  label: string;
-}
-
 export const navItems = [
   {
     name: "About",
@@ -152,15 +146,11 @@ export const socials: Social[] = [
   {
     icon: SiLinkedin,
     label: "LinkedIn",
-    href: "www.linkedin.com/in/jamieyau-dev",
+    href: "https://linkedin.com/in/jamieyau-dev/",
   },
   {
     icon: MdEmail,
     label: "Email",
     href: "mailto:jamiekcyau@gmail.com",
-  },
-  {
-    label: "Resume",
-    href: "",
   },
 ];

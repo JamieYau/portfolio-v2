@@ -1,10 +1,34 @@
 "use client";
+import { socials } from "@/lib/data";
 import ArrowIcon from "../icons/ArrowIcon";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import ShinyButton from "../ui/magicui/shiny-button";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import { motion } from "framer-motion";
-import { FaArrowDown } from "react-icons/fa6";
+import { Social } from "@/lib/data";
+
+interface SocialProps {
+  social: Social;
+}
+
+function SocialItem({ social }: SocialProps) {
+  return (
+    <a
+      key={social.label}
+      href={social.href}
+      className="text-muted-foreground hover:text-foreground"
+    >
+      {social.icon ? (
+        <>
+          <social.icon className="h-6 w-6" />
+          <span className="sr-only">{social.label}</span>
+        </>
+      ) : (
+        <span className="font-bold">{social.label}</span>
+      )}
+    </a>
+  );
+}
 
 export default function Hero() {
   const intro = [
@@ -27,7 +51,7 @@ export default function Hero() {
         className="flex h-full flex-col items-start justify-center px-8"
       >
         <div className="flex-grow"></div>
-        <div>
+        <div className="relative top-8">
           <h3 className="flex">
             <TypewriterEffect
               words={intro}
@@ -78,6 +102,11 @@ export default function Hero() {
             architecto pariatur doloremque, commodi incidunt a natus libero non
             accusantium animi.
           </motion.p>
+          <div className="flex items-center space-x-4 mt-4">
+            {socials.map((social) => (
+              <SocialItem social={social} key={social.label} />
+            ))}
+          </div>
         </div>
         <div className="flex w-full flex-grow items-end justify-center pb-8">
           <ShinyButton>

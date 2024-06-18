@@ -52,7 +52,7 @@ export default function Skills() {
                         key={skill.label}
                         className="basis-1/3 md:basis-1/5"
                       >
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center gap-2">
                     
                           
                               <skill.icon

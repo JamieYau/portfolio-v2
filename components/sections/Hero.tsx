@@ -51,7 +51,7 @@ export default function Hero() {
         className="flex h-full flex-col items-start justify-center px-8"
       >
         <div className="flex-grow"></div>
-        <div className="relative top-8">
+        <div className="relative">
           <h3 className="flex">
             <TypewriterEffect
               words={intro}
@@ -84,26 +84,12 @@ export default function Hero() {
               Full Stack Developer
             </Highlight>
           </motion.h2>
-          <motion.p
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 5,
-            }}
-            className="mt-4 max-w-lg text-muted-foreground"
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-            nihil asperiores quis, iure magni aut omnis labore qui iste
-            architecto pariatur doloremque, commodi incidunt a natus libero non
-            accusantium animi.
-          </motion.p>
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
               duration: 0.8,
-              delay: 5.25,
+              delay: 5,
             }}
             className="mt-4 flex items-center space-x-4"
           >
@@ -117,7 +103,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{
             duration: 0.8,
-            delay: 5.5,
+            delay: 5.25,
           }}
           className="flex w-full flex-grow items-end justify-center pb-8"
         >

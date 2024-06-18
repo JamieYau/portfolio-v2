@@ -49,8 +49,12 @@ export default function About() {
                       <Badge
                         key={skill.label}
                         variant={"secondary"}
-                        className="text-sm"
+                        className="gap-1 text-sm font-normal"
                       >
+                        <skill.icon
+                          className="h-4 w-4"
+                          style={{ fill: skill.color }}
+                        />
                         {skill.label}
                       </Badge>
                     ))}

@@ -45,7 +45,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="m-0 h-screen min-w-full">
+    <section id="home" className="m-0 h-screen min-w-full">
       <HeroHighlight
         containerClassName="flex flex-col justify-center"
         className="flex h-full flex-col items-start justify-center px-8"

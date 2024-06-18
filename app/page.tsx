@@ -10,7 +10,6 @@ export default function Home() {
       <Hero />
       <div className="w-custom m-auto flex flex-col items-center">
         <About />
-        <Skills />
         <Projects />
         <Contact />
       </div>

@@ -50,12 +50,12 @@ export interface Project {
 
 export const navItems = [
   {
-    name: "About",
-    link: "#about",
+    name: "Home",
+    link: "#home",
   },
   {
-    name: "Skills",
-    link: "#skills",
+    name: "About",
+    link: "#about",
   },
   {
     name: "Projects",

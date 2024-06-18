@@ -85,14 +85,10 @@ export default function Hero() {
             </Highlight>
           </motion.h2>
           <motion.p
-            // reveals content from left to right
-            initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
-            whileInView={{
-              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            }}
-            viewport={{ once: true }}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
-              duration: 1.5,
+              duration: 0.8,
               delay: 5,
             }}
             className="mt-4 max-w-lg text-muted-foreground"
@@ -102,17 +98,33 @@ export default function Hero() {
             architecto pariatur doloremque, commodi incidunt a natus libero non
             accusantium animi.
           </motion.p>
-          <div className="flex items-center space-x-4 mt-4">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 5.25,
+            }}
+            className="mt-4 flex items-center space-x-4"
+          >
             {socials.map((social) => (
               <SocialItem social={social} key={social.label} />
             ))}
-          </div>
+          </motion.div>
         </div>
-        <div className="flex w-full flex-grow items-end justify-center pb-8">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 5.5,
+          }}
+          className="flex w-full flex-grow items-end justify-center pb-8"
+        >
           <ShinyButton>
             <ArrowIcon />
           </ShinyButton>
-        </div>
+        </motion.div>
       </HeroHighlight>
     </section>
   );

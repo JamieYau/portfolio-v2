@@ -31,7 +31,7 @@ export default function Skills() {
 
           return (
             <div
-              className="mb-8 flex flex-col"
+              className="mb-8 flex flex-col items-center"
               key={skillCategory.category}
             >
               <div className="mb-8 w-full text-start">
@@ -39,7 +39,7 @@ export default function Skills() {
               </div>
               <div className="w-[80%] sm:w-[90%] md:w-full flex justify-center">
                 <Carousel
-                  plugins={[plugin]} // Use the unique plugin instance here
+                  plugins={[plugin]}
                   opts={{
                     align: "start",
                     loop: true,
@@ -52,9 +52,9 @@ export default function Skills() {
                         key={skill.label}
                         className="basis-1/3 md:basis-1/5"
                       >
-                        <div>
-                          <Card>
-                            <CardContent className="flex aspect-square flex-col items-center justify-center gap-2 px-5 py-6">
+                        <div className="flex flex-col items-center">
+                    
+                          
                               <skill.icon
                                 className="h-6 w-6 sm:h-10 sm:w-10"
                                 style={{ fill: skill.color }}
@@ -62,8 +62,7 @@ export default function Skills() {
                               <span className="hidden text-center leading-5 sm:block sm:text-sm md:font-medium lg:text-base">
                                 {skill.label}
                               </span>
-                            </CardContent>
-                          </Card>
+
                         </div>
                       </CarouselItem>
                     ))}

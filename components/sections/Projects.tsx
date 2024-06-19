@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useSectionInView } from "@/lib/hooks";
 
 const external = {
   initial: { x: 0, y: 0 },
@@ -21,8 +22,10 @@ const external = {
 };
 
 export default function Projects() {
+  const { ref } = useSectionInView("Projects", 0.5);
   return (
     <section
+      ref={ref}
       id="projects"
       className="mx-auto flex min-h-screen w-full flex-col pt-24"
     >

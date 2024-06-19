@@ -8,10 +8,15 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import clsx from "clsx";
+import { SectionName } from "@/lib/data";
 
 export const FloatingNav = ({
   navItems,
   className,
+  activeSection,
+  setActiveSection,
+  setTimeOfLastClick,
 }: {
   navItems: {
     name: string;
@@ -19,6 +24,9 @@ export const FloatingNav = ({
     icon?: JSX.Element;
   }[];
   className?: string;
+  activeSection: string;
+  setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
+  setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const { scrollYProgress } = useScroll();
 
@@ -65,11 +73,19 @@ export const FloatingNav = ({
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative flex items-center space-x-1 text-muted-foreground hover:text-foreground",
+              clsx(
+                "relative flex items-center space-x-1 border-b border-transparent text-muted-foreground hover:text-foreground",
+                {
+                  "border-b-muted-foreground": activeSection === navItem.name,
+                },
+              ),
             )}
+            onClick={() => {
+              setActiveSection(navItem.name);
+              setTimeOfLastClick(Date.now());
+            }}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="text-sm !cursor-pointer">{navItem.name}</span>
+            <span className="!cursor-pointer text-sm">{navItem.name}</span>
           </Link>
         ))}
       </motion.div>

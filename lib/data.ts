@@ -65,7 +65,9 @@ export const navItems = [
     name: "Contact",
     link: "#contact",
   },
-];
+] as const;
+
+export type SectionName = (typeof navItems)[number]["name"];
 
 export const skills = [
   {

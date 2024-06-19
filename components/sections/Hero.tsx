@@ -6,6 +6,7 @@ import ShinyButton from "../ui/magicui/shiny-button";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import { motion } from "framer-motion";
 import { Social } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 
 interface SocialProps {
   social: Social;
@@ -31,6 +32,7 @@ function SocialItem({ social }: SocialProps) {
 }
 
 export default function Hero() {
+  const { ref } = useSectionInView("Home", 0.5);
   const intro = [
     { text: "Hi," },
     { text: "my" },
@@ -45,7 +47,7 @@ export default function Hero() {
   );
 
   return (
-    <section id="home" className="m-0 h-screen min-w-full">
+    <section ref={ref} id="home" className="m-0 h-screen min-w-full">
       <HeroHighlight
         containerClassName="flex flex-col justify-center"
         className="flex h-full flex-col items-start justify-center px-8"

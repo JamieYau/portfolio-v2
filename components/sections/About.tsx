@@ -2,10 +2,13 @@
 
 import { skills } from "@/lib/data";
 import { Badge } from "../ui/badge";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
+  const { ref } = useSectionInView("About");
+
   return (
-    <section id="about" className="mx-auto flex w-full flex-col pt-24">
+    <section ref={ref} id="about" className="mx-auto flex w-full flex-col pt-24">
       <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['01.'] after:h-px after:flex-1 after:bg-muted">
         <span className="mr-4">About Me</span>
       </h2>

@@ -48,7 +48,7 @@ export async function onSubmitAction(
   }
 
   try {
-    await resend.emails.send({
+    const response = await resend.emails.send({
       from: `Resume Contact Form <${resendEmail}>`,
       to: ["jamie.yau2002@me.com"], // Change to your desired recipient
       subject: "New Contact Form Submission",
@@ -58,10 +58,13 @@ export async function onSubmitAction(
       }) as React.ReactElement,
     });
 
+    console.log("Email send response:", response); // Enhanced logging
+
     return { message: "Message Sent" };
   } catch (error) {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error occurred";
+    console.error("Error sending email:", errorMessage, error); // Improved logging
     return {
       message: "Failed to send message",
       issues: [errorMessage],

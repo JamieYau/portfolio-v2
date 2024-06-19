@@ -5,7 +5,7 @@ import { Badge } from "../ui/badge";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  const { ref } = useSectionInView("About");
+  const { ref } = useSectionInView("About", 0.5);
 
   return (
     <section ref={ref} id="about" className="mx-auto flex w-full flex-col pt-24">

@@ -4,6 +4,7 @@ import EmailTemplate from "@/components/EmailTemplate";
 import { formSchema } from "./formSchema";
 import { Resend } from "resend";
 import { validateString } from "@/lib/utils";
+import { error } from "console";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const RESEND_EMAIL = process.env.RESEND_EMAIL;
@@ -59,7 +60,10 @@ export async function onSubmitAction(
       }) as React.ReactElement,
     });
 
-    console.log("Email send response:", response); // Enhanced logging
+    if (response.error) {
+      console.log(response)
+      throw new Error(response.error.message);
+    }
 
     return { message: "Message Sent" };
   } catch (error) {

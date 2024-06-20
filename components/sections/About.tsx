@@ -6,6 +6,34 @@ import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import Section from "./Section";
 
+const aboutInfo = [
+  {
+    title: "About",
+    paragraph:
+      "I'm a passionate full stack developer that likes creating\
+      Responsive and User-friendly web applications. My journey began with\
+      Python, evolving from simple projects to complex games. With a solid\
+      foundation in Java and experience in multiple projects, I now apply\
+      the software engineering principles gained from university to\
+      develop full stack web applications.",
+  },
+  {
+    title: "Education",
+    paragraph:
+      "I hold a Bachelors of Science in Computer Science from Royal\
+      Holloway University of London, where I gained a strong foundation in\
+      software development and computer science principles.",
+  },
+  {
+    title: "Interests",
+    paragraph:
+      "Beyond coding, I have a keen interest in the latest tech\
+      innovations. To maintain a healthy balance, I regularly hit the gym\
+      and enjoy sports such as football, basketball, MMA, boxing, and\
+      American football.",
+  },
+];
+
 export default function About() {
   const { ref } = useSectionInView("About", 0.5);
   const skillVariants = {
@@ -25,36 +53,20 @@ export default function About() {
   return (
     <Section ref={ref} sectionName="About" className="before:content-['01.']">
       <div className="flex w-full flex-col gap-4 lg:flex-row">
-        <div className="max-w-2xl">
-          <h3 className="text-xl font-semibold">About</h3>
-          <p className="mb-4 tracking-tight">
-            I&apos;m a passionate full stack developer that likes creating
-            Responsive and User-friendly web applications. My journey began with
-            Python, evolving from simple projects to complex games. With a solid
-            foundation in Java and experience in multiple projects, I now apply
-            the software engineering principles gained from university to
-            develop full stack web applications.
-          </p>
-          <h3 className="mt-8 text-xl font-semibold">Education</h3>
-          <p className="mb-4 tracking-tight">
-            I hold a Bachelors of Science in Computer Science from Royal
-            Holloway University of London, where I gained a strong foundation in
-            software development and computer science principles.
-          </p>
-          <h3 className="mt-8 text-xl font-semibold">Personal Interests</h3>
-          <p className="mb-4 tracking-tight">
-            Beyond coding, I have a keen interest in the latest tech
-            innovations. To maintain a healthy balance, I regularly hit the gym
-            and enjoy sports such as football, basketball, MMA, boxing, and
-            American football.
-          </p>
-        </div>
-        <div>
+        <ul className="flex max-w-2xl flex-col gap-8">
+          {aboutInfo.map((about) => (
+            <li key={about.title} className="flex flex-col gap-2">
+              <h3 className="text-xl font-semibold">{about.title}</h3>
+              <p className="tracking-tight">{about.paragraph}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-col gap-2">
           <h3 className="text-xl font-semibold">Skills</h3>
-          <div className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4">
             {skills.map((skillCategory) => {
               return (
-                <div
+                <li
                   className="flex flex-col gap-2"
                   key={skillCategory.category}
                 >
@@ -85,10 +97,10 @@ export default function About() {
                       </motion.li>
                     ))}
                   </ul>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </div>
     </Section>

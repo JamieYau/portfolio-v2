@@ -3,20 +3,54 @@
 import { skills } from "@/lib/data";
 import { Badge } from "../ui/badge";
 import { useSectionInView } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 export default function About() {
   const { ref } = useSectionInView("About", 0.5);
+  const sectionVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+  const skillVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * index,
+      },
+    }),
+  };
 
   return (
-    <section
+    <motion.section
       ref={ref}
       id="about"
       className="mx-auto flex w-full flex-col pt-24"
+      variants={sectionVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+        margin: "0px 0px -200px 0px",
+      }}
     >
       <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['01.'] after:h-px after:flex-1 after:bg-muted">
         <span className="mr-4">About Me</span>
       </h2>
-      <div className="flex w-full flex-col lg:flex-row gap-4">
+      <div className="flex w-full flex-col gap-4 lg:flex-row">
         <div className="max-w-2xl">
           <h3 className="text-xl font-semibold">About</h3>
           <p className="mb-4 tracking-tight">
@@ -51,27 +85,38 @@ export default function About() {
                   key={skillCategory.category}
                 >
                   <h4 className="font-medium">{skillCategory.category}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skillCategory.items.map((skill) => (
-                      <Badge
+                  <ul className="flex flex-wrap gap-2">
+                    {skillCategory.items.map((skill, index) => (
+                      <motion.li
                         key={skill.label}
-                        variant={"secondary"}
-                        className="gap-1 text-sm font-normal"
+                        variants={skillVariants}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{
+                          once: true,
+                          margin: "0px 0px 50px 0px",
+                        }}
+                        custom={index}
                       >
-                        <skill.icon
-                          className="h-4 w-4"
-                          style={{ fill: skill.color }}
-                        />
-                        {skill.label}
-                      </Badge>
+                        <Badge
+                          variant={"secondary"}
+                          className="gap-1 text-sm font-normal"
+                        >
+                          <skill.icon
+                            className="h-4 w-4"
+                            style={{ fill: skill.color }}
+                          />
+                          {skill.label}
+                        </Badge>
+                      </motion.li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

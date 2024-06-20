@@ -4,7 +4,6 @@ import EmailTemplate from "@/components/EmailTemplate";
 import { formSchema } from "./formSchema";
 import { Resend } from "resend";
 import { validateString } from "@/lib/utils";
-import { error } from "console";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const RESEND_EMAIL = process.env.RESEND_EMAIL;

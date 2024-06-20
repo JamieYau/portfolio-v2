@@ -34,12 +34,15 @@ function SocialItem({ social }: SocialProps) {
 export default function Hero() {
   const { ref } = useSectionInView("Home", 0.5);
   const intro = [
-    { text: "Hi," },
-    { text: "my" },
-    { text: "name" },
-    { text: "is" },
+    { text: "Hi,", className: "tracking-tight" },
+    { text: "my", className: "tracking-tight" },
+    { text: "name", className: "tracking-tight" },
+    { text: "is", className: "tracking-tight" },
   ];
-  const name = [{ text: "Jamie" }, { text: "Yau" }];
+  const name = [
+    { text: "Jamie", className: "tracking-tighter" },
+    { text: "Yau", className: "tracking-tighter" },
+  ];
 
   const introTypingDuration = intro.reduce(
     (total, word) => total + word.text.length * 0.1,

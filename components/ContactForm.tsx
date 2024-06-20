@@ -30,7 +30,7 @@ interface ContactFormProps {
 function SubmitButton({ isPending }: { isPending: boolean }) {
   return (
     <Button type="submit" disabled={isPending}>
-      {!isPending ? (
+      {isPending ? (
         <div className="flex items-center justify-center gap-1">
           <LoadingIcon className="-ml-1 h-5 w-5 animate-spin" />
           <span>Submitting...</span>

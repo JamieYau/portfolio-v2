@@ -4,22 +4,10 @@ import { skills } from "@/lib/data";
 import { Badge } from "../ui/badge";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import Section from "./Section";
 
 export default function About() {
   const { ref } = useSectionInView("About", 0.5);
-  const sectionVariants = {
-    initial: {
-      opacity: 0,
-      y: 100,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
   const skillVariants = {
     initial: {
       opacity: 0,
@@ -35,21 +23,7 @@ export default function About() {
   };
 
   return (
-    <motion.section
-      ref={ref}
-      id="about"
-      className="mx-auto flex w-full flex-col pt-24"
-      variants={sectionVariants}
-      initial="initial"
-      whileInView="animate"
-      viewport={{
-        once: true,
-        margin: "0px 0px -200px 0px",
-      }}
-    >
-      <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['01.'] after:h-px after:flex-1 after:bg-muted">
-        <span className="mr-4">About Me</span>
-      </h2>
+    <Section ref={ref} sectionName="About" className="before:content-['01.']">
       <div className="flex w-full flex-col gap-4 lg:flex-row">
         <div className="max-w-2xl">
           <h3 className="text-xl font-semibold">About</h3>
@@ -117,6 +91,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </Section>
   );
 }

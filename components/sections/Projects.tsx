@@ -15,6 +15,7 @@ import { buttonVariants } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import Section from "./Section";
 
 const external = {
   initial: { x: 0, y: 0 },
@@ -24,14 +25,12 @@ const external = {
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
   return (
-    <section
+    <Section
       ref={ref}
-      id="projects"
-      className="mx-auto flex min-h-screen w-full flex-col pt-24"
+      sectionName="Projects"
+      className="before:content-['02.']"
+      containerClassName="min-h-screen"
     >
-      <h2 className="mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary before:content-['02.'] after:h-px after:flex-1 after:bg-muted">
-        <span className="mr-4">Projects</span>
-      </h2>
       <div className="mx-auto grid grid-cols-1 gap-8 md:grid-cols-2">
         {projects.map((project) => (
           <Card key={project.title} className="shadow-lg">
@@ -94,6 +93,6 @@ export default function Projects() {
           </Card>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

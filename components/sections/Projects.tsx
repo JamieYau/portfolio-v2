@@ -56,14 +56,16 @@ export default function Projects() {
             }}
             className="group relative flex w-full justify-center lg:grid lg:grid-cols-12 lg:align-middle"
           >
-            <Image
-              src={project.image}
-              alt={project.title}
-              quality={95}
-              className="hidden w-full rounded-md object-cover lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13"
-              width="460"
-              height="290"
-            />
+            <div className="group hidden rounded-lg z-10 before:z-20 before:rounded-lg before:absolute before:inset-0 before:duration-300 before:bg-primary before:opacity-100 before:mix-blend-multiply before:transition-opacity before:ease-in-out hover:before:opacity-0 lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13">
+              <Image
+                src={project.image}
+                alt={project.title}
+                quality={95}
+                className="w-full rounded-md object-cover"
+                width="460"
+                height="290"
+              />
+            </div>
             <Card className="relative h-max shadow-lg lg:col-span-6 lg:col-start-1 lg:row-span-full lg:border-none lg:bg-transparent lg:shadow-none lg:group-odd:col-start-7">
               <CardHeader className="lg:hidden">
                 <Image
@@ -75,9 +77,9 @@ export default function Projects() {
                   height="290"
                 />
               </CardHeader>
-              <CardContent className="z-3 lg:pb-0 lg:group-odd:text-end">
+              <CardContent className="z-0 lg:pb-0 lg:group-odd:text-end">
                 <CardTitle>{project.title}</CardTitle>
-                <CardDescription className="lg:my-6 lg:rounded-lg lg:border lg:bg-card lg:p-6 lg:text-card-foreground">
+                <CardDescription className="lg:my-6 lg:rounded-lg lg:border lg:bg-card lg:p-6 lg:text-card-foreground z-30 relative">
                   {project.description}
                 </CardDescription>
                 <div className="mb-4 flex gap-2 text-sm lg:group-odd:justify-end">

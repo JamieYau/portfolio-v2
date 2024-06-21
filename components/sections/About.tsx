@@ -2,7 +2,6 @@
 
 import { skills } from "@/lib/data";
 import { Badge } from "../ui/badge";
-import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import Section from "./Section";
 
@@ -35,7 +34,6 @@ const aboutInfo = [
 ];
 
 export default function About() {
-  const { ref } = useSectionInView("About", 0.5);
   const skillVariants = {
     initial: {
       opacity: 0,
@@ -51,7 +49,11 @@ export default function About() {
   };
 
   return (
-    <Section ref={ref} sectionName="About" className="before:content-['01.']">
+    <Section
+      sectionName="About"
+      threshold={0.5}
+      className="before:content-['01.']"
+    >
       <div className="flex w-full flex-col gap-4 lg:flex-row">
         <ul className="flex max-w-2xl flex-col gap-8">
           {aboutInfo.map((about) => (

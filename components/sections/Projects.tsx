@@ -14,7 +14,6 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
 import Section from "./Section";
 
 const external = {
@@ -37,11 +36,10 @@ const projectVariants = {
 };
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projects", 0.5);
   return (
     <Section
-      ref={ref}
       sectionName="Projects"
+      threshold={0.3}
       className="before:content-['02.']"
       containerClassName="min-h-screen"
     >

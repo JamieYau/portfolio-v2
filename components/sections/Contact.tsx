@@ -1,15 +1,13 @@
 "use client";
 
-import { useSectionInView } from "@/lib/hooks";
 import ContactForm from "../ContactForm";
 import Section from "./Section";
 
 export default function Contact() {
-  const { ref } = useSectionInView("Contact", 0.4);
   return (
     <Section
-      ref={ref}
       sectionName="Contact"
+      threshold={0.4}
       className="before:content-['03.']"
       containerClassName="min-h-screen"
     >

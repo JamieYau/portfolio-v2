@@ -1,39 +1,43 @@
+import { SectionName } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { LegacyRef } from "react";
 
 interface SectionProps {
-  ref: LegacyRef<HTMLElement> | undefined;
-  sectionName: string;
+  sectionName: SectionName;
   children: React.ReactNode;
   containerClassName?: string;
   className?: string;
+  threshold?: number;
 }
 
 const sectionVariants = {
-    initial: {
-      opacity: 0,
-      y: 100,
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
     },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+  },
+};
 
-export default function Section({ref,
+export default function Section({
   sectionName,
   children,
   containerClassName,
-  className,}:SectionProps) {
+  threshold,
+  className,
+}: SectionProps) {
+  const { ref } = useSectionInView(sectionName, threshold);
   return (
     <motion.section
       ref={ref}
       id={sectionName.toLowerCase().replace(/\s+/g, "-")}
-      className={cn("mx-auto flex w-full flex-col pt-24",containerClassName)}
+      className={cn("mx-auto flex w-full flex-col pt-24", containerClassName)}
       variants={sectionVariants}
       initial="initial"
       whileInView="animate"

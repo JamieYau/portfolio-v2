@@ -85,7 +85,7 @@ export default function About() {
                         custom={index}
                       >
                         <Badge
-                          variant={"secondary"}
+                          variant={"muted"}
                           className="gap-1 text-sm font-normal"
                         >
                           <skill.icon

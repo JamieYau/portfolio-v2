@@ -35,24 +35,30 @@ export default function Projects() {
         {projects.map((project) => (
           <li
             key={project.title}
-            className="group relative flex w-full justify-center py-8 lg:justify-start lg:odd:justify-end"
+            className="group relative flex w-full justify-center lg:grid lg:grid-cols-12 lg:align-middle"
           >
-            <Card className="max-w-lg shadow-lg lg:w-1/2 lg:flex-col">
-              <CardHeader className="p-0">
+            <Image
+              src={project.image}
+              alt={project.title}
+              quality={95}
+              className="hidden w-full rounded-md object-cover lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13"
+              width="460"
+              height="290"
+            />
+            <Card className="relative shadow-lg lg:col-span-6 lg:col-start-1 lg:row-span-full lg:border-none lg:bg-transparent lg:shadow-none lg:group-odd:col-start-7">
+              <CardHeader className="lg:hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   quality={95}
-                  className="right-0 top-0 rounded-md object-cover group-odd:left-0 lg:absolute"
+                  className="w-full rounded-md object-cover"
                   width="460"
                   height="290"
                 />
               </CardHeader>
-              <CardContent className="z-3 lg:pt-0">
-                <CardTitle className="lg:group-odd:text-end">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="lg:group-odd:text-end">
+              <CardContent className="z-3 lg:group-odd:text-end lg:pb-0">
+                <CardTitle>{project.title}</CardTitle>
+                <CardDescription className="lg:my-6 lg:rounded-lg lg:border lg:bg-card lg:text-card-foreground lg:p-6">
                   {project.description}
                 </CardDescription>
                 <div className="mb-4 flex gap-2 text-sm lg:group-odd:justify-end">

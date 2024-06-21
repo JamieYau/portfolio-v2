@@ -44,7 +44,7 @@ export default function Section({ref,
     >
       <h2
         className={cn(
-          "mb-4 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary after:h-px after:flex-1 after:bg-muted",
+          "mb-10 flex items-center text-[clamp(26px,5vw,2em)] font-semibold before:mr-2 before:text-primary after:h-px after:flex-1 after:bg-muted",
           className,
         )}
       >

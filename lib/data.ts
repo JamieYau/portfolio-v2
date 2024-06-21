@@ -131,6 +131,36 @@ export const projects: Project[] = [
       repo: "https://github.com/JamieYau/blog-client",
     },
   },
+  {
+    title: "Blog Website",
+    image: "/Blog.png",
+    description:
+      "A website displaying Blogs related to my Software Development journey created from my CMS site",
+    tags: [
+      { name: "React", variant: "react" },
+      { name: "Vite", variant: "vite" },
+      { name: "API", variant: "api" },
+    ],
+    links: {
+      live: "https://blog-client-kappa-seven.vercel.app/",
+      repo: "https://github.com/JamieYau/blog-client",
+    },
+  },
+  {
+    title: "Blog Website",
+    image: "/Blog.png",
+    description:
+      "A website displaying Blogs related to my Software Development journey created from my CMS site",
+    tags: [
+      { name: "React", variant: "react" },
+      { name: "Vite", variant: "vite" },
+      { name: "API", variant: "api" },
+    ],
+    links: {
+      live: "https://blog-client-kappa-seven.vercel.app/",
+      repo: "https://github.com/JamieYau/blog-client",
+    },
+  },
 ];
 
 export interface Social {

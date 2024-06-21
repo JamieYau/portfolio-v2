@@ -5,7 +5,7 @@ import ContactForm from "../ContactForm";
 import Section from "./Section";
 
 export default function Contact() {
-  const { ref } = useSectionInView("Contact");
+  const { ref } = useSectionInView("Contact", 0.4);
   return (
     <Section
       ref={ref}

@@ -22,6 +22,20 @@ const external = {
   animate: { x: 5, y: -5 },
 };
 
+const projectVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
   return (
@@ -33,8 +47,15 @@ export default function Projects() {
     >
       <ul className="flex w-full flex-col gap-10">
         {projects.map((project) => (
-          <li
+          <motion.li
             key={project.title}
+            variants={projectVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             className="group relative flex w-full justify-center lg:grid lg:grid-cols-12 lg:align-middle"
           >
             <Image
@@ -104,7 +125,7 @@ export default function Projects() {
                 )}
               </CardFooter>
             </Card>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </Section>

@@ -31,7 +31,7 @@ export default function Projects() {
       className="before:content-['02.']"
       containerClassName="min-h-screen"
     >
-      <ul className="flex w-full flex-col gap-8">
+      <ul className="flex w-full flex-col gap-10">
         {projects.map((project) => (
           <li
             key={project.title}
@@ -45,7 +45,7 @@ export default function Projects() {
               width="460"
               height="290"
             />
-            <Card className="relative shadow-lg lg:col-span-6 lg:col-start-1 lg:row-span-full lg:border-none lg:bg-transparent lg:shadow-none lg:group-odd:col-start-7">
+            <Card className="relative h-max shadow-lg lg:col-span-6 lg:col-start-1 lg:row-span-full lg:border-none lg:bg-transparent lg:shadow-none lg:group-odd:col-start-7">
               <CardHeader className="lg:hidden">
                 <Image
                   src={project.image}
@@ -56,9 +56,9 @@ export default function Projects() {
                   height="290"
                 />
               </CardHeader>
-              <CardContent className="z-3 lg:group-odd:text-end lg:pb-0">
+              <CardContent className="z-3 lg:pb-0 lg:group-odd:text-end">
                 <CardTitle>{project.title}</CardTitle>
-                <CardDescription className="lg:my-6 lg:rounded-lg lg:border lg:bg-card lg:text-card-foreground lg:p-6">
+                <CardDescription className="lg:my-6 lg:rounded-lg lg:border lg:bg-card lg:p-6 lg:text-card-foreground">
                   {project.description}
                 </CardDescription>
                 <div className="mb-4 flex gap-2 text-sm lg:group-odd:justify-end">

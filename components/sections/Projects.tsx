@@ -56,14 +56,14 @@ export default function Projects() {
             }}
             className="group relative flex w-full justify-center lg:grid lg:grid-cols-12 lg:align-middle"
           >
-            <div className="group hidden rounded-lg z-10 before:z-20 before:rounded-lg before:absolute before:inset-0 before:duration-300 before:bg-primary before:opacity-100 before:mix-blend-multiply before:transition-opacity before:ease-in-out hover:before:opacity-0 lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13">
+            <div className="group hidden rounded-lg z-10 lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13">
               <Image
                 src={project.image}
                 alt={project.title}
-                quality={95}
+                quality={100}
                 className="w-full rounded-md object-cover"
-                width="460"
-                height="290"
+                width="579"
+                height="362"
               />
             </div>
             <Card className="relative h-max shadow-lg lg:col-span-6 lg:col-start-1 lg:row-span-full lg:border-none lg:bg-transparent lg:shadow-none lg:group-odd:col-start-7">

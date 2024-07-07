@@ -39,6 +39,7 @@ const ShinyButton = ({ children }: Props) => {
       {...animationProps}
       className="relative rounded-full font-medium backdrop-blur-xl transition-[box-shadow] duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)]"
       onClick={handleClick}
+      aria-label="page down"
     >
       <span
         className="relative block h-full w-full p-4 text-sm uppercase tracking-wide text-[rgb(0,0,0,65%)] dark:font-light dark:text-[rgb(255,255,255,90%)]"

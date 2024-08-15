@@ -58,7 +58,10 @@ export default function Projects() {
             className="group relative flex w-full justify-center lg:grid lg:grid-cols-12 lg:align-middle"
           >
             <div className="group z-10 hidden lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13">
-              <AspectRatio ratio={3 / 2}>
+              <AspectRatio
+                ratio={3 / 2}
+                className="before:absolute before:inset-0 before:z-20 before:rounded-lg before:opacity-100 before:mix-blend-multiply before:brightness-[40%] before:transition-opacity before:duration-300 before:ease-in-out hover:before:opacity-0 before:dark:bg-primary"
+              >
                 <Image
                   src={project.image}
                   alt={project.title}

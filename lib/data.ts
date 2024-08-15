@@ -30,6 +30,8 @@ import TypescriptIcon from "@/components/icons/TypescriptIcon";
 import HTMLIcon from "@/components/icons/HTMLIcon";
 import { IconType } from "react-icons/lib";
 import PostmanIcon from "@/components/icons/PostmanIcon";
+import AwsIcon from "@/components/icons/AwsIcon";
+import NextAuthIcon from "@/components/icons/NextAuthIcon";
 
 interface Tag {
   name: string;
@@ -102,6 +104,8 @@ export const skills = [
     category: "Other",
     items: [
       { icon: SiNextdotjs, label: "Next.js", color: "currentColor" },
+      { icon: NextAuthIcon, label: "Next`Auth", color: "currentColor" },
+      { icon: AwsIcon, label: "AWS", color: "currentColor" },
       { icon: ViteIcon, label: "Vite", color: "#646CFF" },
       { icon: SiWebpack, label: "Webpack", color: "#8DD6F9" },
       { icon: SiJest, label: "Jest", color: "#C21325" },
@@ -110,7 +114,6 @@ export const skills = [
       { icon: SiVercel, label: "Vercel", color: "currentColor" },
       { icon: SiRailway, label: "Railway", color: "currentColor" },
       { icon: FaGitAlt, label: "Git", color: "#F05032" },
-      { icon: SiSubversion, label: "SVN", color: "#809CC9" },
     ],
   },
 ];

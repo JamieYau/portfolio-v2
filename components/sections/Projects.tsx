@@ -15,6 +15,7 @@ import { buttonVariants } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Section from "./Section";
+import { AspectRatio } from "../ui/aspect-ratio";
 
 const external = {
   initial: { x: 0, y: 0 },
@@ -56,33 +57,35 @@ export default function Projects() {
             }}
             className="group relative flex w-full justify-center lg:grid lg:grid-cols-12 lg:align-middle"
           >
-            <div className="group hidden rounded-lg z-10 lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13">
-              <Image
-                src={project.image}
-                alt={project.title}
-                quality={100}
-                className="w-full rounded-md object-cover"
-                width="579"
-                height="362"
-              />
-            </div>
-            <Card className="relative h-max shadow-lg lg:col-span-6 lg:col-start-1 lg:row-span-full lg:border-none lg:bg-transparent lg:shadow-none lg:group-odd:col-start-7">
-              <CardHeader className="lg:hidden">
+            <div className="group z-10 hidden lg:relative lg:col-span-7 lg:col-end-8 lg:row-span-full lg:block lg:group-even:col-end-13">
+              <AspectRatio ratio={3 / 2}>
                 <Image
                   src={project.image}
                   alt={project.title}
-                  quality={95}
-                  className="w-full rounded-md object-cover"
-                  width="460"
-                  height="290"
+                  fill
+                  sizes="(min-width: 1340px) 652px, calc(38.57vw + 143px)"
+                  className="rounded-lg border object-cover"
                 />
+              </AspectRatio>
+            </div>
+            <Card className="relative h-max shadow-lg lg:col-span-6 lg:col-start-1 lg:row-span-full lg:border-none lg:bg-transparent lg:shadow-none lg:group-odd:col-start-7">
+              <CardHeader className="lg:hidden">
+                <AspectRatio ratio={4 / 3}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(min-width: 380px) calc(90vw - 51px), calc(31.67vw + 159px)"
+                    className="rounded-lg border object-cover"
+                  />
+                </AspectRatio>
               </CardHeader>
               <CardContent className="z-0 lg:pb-0 lg:group-odd:text-end">
                 <CardTitle>{project.title}</CardTitle>
-                <CardDescription className="lg:my-6 lg:rounded-lg lg:border lg:bg-card lg:p-6 lg:text-card-foreground z-30 relative">
+                <CardDescription className="relative z-30 my-6 text-start lg:rounded-lg lg:border lg:bg-muted lg:p-6 lg:text-muted-foreground">
                   {project.description}
                 </CardDescription>
-                <div className="mb-4 flex gap-2 text-sm lg:group-odd:justify-end">
+                <div className="mb-4 flex flex-wrap gap-2 text-sm lg:group-odd:justify-end">
                   {project.tags.map((tag, index) => (
                     <Badge key={index} variant={tag.variant}>
                       {tag.name}

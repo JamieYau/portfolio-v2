@@ -95,7 +95,7 @@ export const skills = [
       { icon: SiPostgresql, label: "PostgreSQL", color: "#336791" },
       { icon: PythonIcon, label: "Python", color: "currentColor" },
       { icon: JavaIcon, label: "Java", color: "currentColor" },
-      { icon: PostmanIcon, label: "Postman", color: "currentColor"}
+      { icon: PostmanIcon, label: "Postman", color: "currentColor" },
     ],
   },
   {
@@ -117,48 +117,37 @@ export const skills = [
 
 export const projects: Project[] = [
   {
-    title: "Blog Website",
-    image: "/Blog.png",
+    title: "Blog Platform",
+    image: "/DevBlog.png",
     description:
-      "A website displaying Blogs related to my Software Development journey created from my CMS site",
+      "A fully featured blog platform consisting of three separate applications: a client-facing blog site, an admin dashboard, and a RESTful API. The API is built with Node.js and Express, leveraging JWT refresh tokens for secure authentication and MongoDB for data storage. The platform is hosted on AWS.",
     tags: [
       { name: "React", variant: "react" },
-      { name: "Vite", variant: "vite" },
-      { name: "API", variant: "api" },
+      { name: "NodeJs", variant: "node" },
+      { name: "Express", variant: "express" },
+      { name: "MongoDB", variant: "mongodb" },
+      { name: "AWS", variant: "aws" },
     ],
     links: {
-      live: "https://blog-client-kappa-seven.vercel.app/",
+      live: "https://blog.jamieyau.com",
       repo: "https://github.com/JamieYau/blog-client",
     },
   },
   {
-    title: "Blog Website",
-    image: "/Blog.png",
+    title: "TechWave Ecommerce",
+    image: "/TechWave.png",
     description:
-      "A website displaying Blogs related to my Software Development journey created from my CMS site",
+      "A responsive full-stack e-commerce application built with Next.js, TypeScript, and PostgreSQL. The platform includes product search, filtering, and sorting, user reviews, a shopping cart, Stripe payment integration and user authentication using OAuth.",
     tags: [
-      { name: "React", variant: "react" },
-      { name: "Vite", variant: "vite" },
-      { name: "API", variant: "api" },
+      { name: "Next.Js", variant: "nextjs" },
+      { name: "TypeScript", variant: "typescript" },
+      { name: "PostgreSQL", variant: "postgresql" },
+      { name: "OAuth", variant: "oauth" },
+      { name: "Stripe", variant: "stripe" },
     ],
     links: {
-      live: "https://blog-client-kappa-seven.vercel.app/",
-      repo: "https://github.com/JamieYau/blog-client",
-    },
-  },
-  {
-    title: "Blog Website",
-    image: "/Blog.png",
-    description:
-      "A website displaying Blogs related to my Software Development journey created from my CMS site",
-    tags: [
-      { name: "React", variant: "react" },
-      { name: "Vite", variant: "vite" },
-      { name: "API", variant: "api" },
-    ],
-    links: {
-      live: "https://blog-client-kappa-seven.vercel.app/",
-      repo: "https://github.com/JamieYau/blog-client",
+      live: "https://techwave.jamieyau.com",
+      repo: "https://github.com/JamieYau/e-commerce",
     },
   },
 ];

@@ -1,5 +1,5 @@
 "use client";
-import { type AnimationProps, motion } from "motion/react";
+import { type AnimationProps, motion } from "framer-motion";
 
 const animationProps = {
   initial: { "--x": "100%", scale: 0.8 },

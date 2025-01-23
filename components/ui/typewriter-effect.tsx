@@ -6,7 +6,7 @@ import {
   useAnimate,
   useInView,
   useAnimation,
-} from "motion/react";
+} from "framer-motion";
 import { useEffect } from "react";
 
 export const TypewriterEffect = ({

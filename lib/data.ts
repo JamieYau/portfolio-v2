@@ -104,7 +104,7 @@ export const skills = [
     category: "Other",
     items: [
       { icon: SiNextdotjs, label: "Next.js", color: "currentColor" },
-      { icon: NextAuthIcon, label: "Next`Auth", color: "currentColor" },
+      { icon: NextAuthIcon, label: "Next Auth", color: "currentColor" },
       { icon: AwsIcon, label: "AWS", color: "currentColor" },
       { icon: ViteIcon, label: "Vite", color: "#646CFF" },
       { icon: SiWebpack, label: "Webpack", color: "#8DD6F9" },

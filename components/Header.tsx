@@ -2,7 +2,7 @@
 import { ModeToggle } from "./ui/toggle-mode";
 import { navItems } from "@/lib/data";
 import { FloatingNav } from "./ui/floating-navbar";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useActiveSectionContext } from "@/context/active-section-provider";
 
 export default function Header() {

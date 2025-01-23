@@ -13,7 +13,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Section from "./Section";
 import { AspectRatio } from "../ui/aspect-ratio";
 

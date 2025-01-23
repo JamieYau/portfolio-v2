@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type Tab = {
@@ -52,7 +52,10 @@ export const Tabs = ({
             }}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
-            className={cn("relative rounded-full border-card px-4 py-2", tabClassName)}
+            className={cn(
+              "relative rounded-full border-card px-4 py-2",
+              tabClassName,
+            )}
             style={{
               transformStyle: "preserve-3d",
             }}
@@ -68,9 +71,7 @@ export const Tabs = ({
               />
             )}
 
-            <span className="relative block text-foreground">
-              {tab.title}
-            </span>
+            <span className="relative block text-foreground">{tab.title}</span>
           </button>
         ))}
       </div>

@@ -5,7 +5,7 @@ import {
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
-} from "framer-motion";
+} from "motion/react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import clsx from "clsx";
@@ -75,7 +75,7 @@ export const FloatingNav = ({
                 href={navItem.link}
                 className={cn(
                   clsx(
-                    "flex items-center py-1 px-2 text-muted-foreground text-sm hover:text-foreground",
+                    "flex items-center px-2 py-1 text-sm text-muted-foreground hover:text-foreground",
                     {
                       "text-foreground": activeSection === navItem.name,
                     },

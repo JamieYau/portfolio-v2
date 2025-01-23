@@ -4,7 +4,7 @@ import ArrowIcon from "../icons/ArrowIcon";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import ShinyButton from "../ui/magicui/shiny-button";
 import { TypewriterEffect } from "../ui/typewriter-effect";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Social } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 

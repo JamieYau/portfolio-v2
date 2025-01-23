@@ -2,7 +2,7 @@
 
 import { skills } from "@/lib/data";
 import { Badge } from "../ui/badge";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Section from "./Section";
 
 const aboutInfo = [

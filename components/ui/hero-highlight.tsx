@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
+import { useMotionValue, motion, useMotionTemplate } from "motion/react";
 import React from "react";
 
 export const HeroHighlight = ({
@@ -86,7 +86,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block rounded-lg bg-gradient-to-r px-1 pb-1 to-[hsl(151,73%,56%)] from-[hsl(133,8%,75%)] text-[hsl(153,100%,11%)] dark:from-secondary dark:to-primary`,
+        `relative inline-block rounded-lg bg-gradient-to-r from-[hsl(133,8%,75%)] to-[hsl(151,73%,56%)] px-1 pb-1 text-[hsl(153,100%,11%)] dark:from-secondary dark:to-primary`,
         className,
       )}
     >

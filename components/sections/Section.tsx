@@ -1,7 +1,7 @@
 import { SectionName } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface SectionProps {
   sectionName: SectionName;
